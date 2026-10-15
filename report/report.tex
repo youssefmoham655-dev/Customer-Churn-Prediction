@@ -1,0 +1,89 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Data Science Project: Customer Churn Prediction}
+\fancyhead[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\title{\vspace{-1.5cm}\textbf{Business insights and retention recommendations.}}
+\date{} % Removes the date
+
+\begin{document}
+
+\maketitle
+\thispagestyle{fancy}
+
+Accross 7043 customers, the churn rate is \textbf{26.54\%}, based on 4 magor features that affects  churn drivers, which are contract type, internet service
+type, support/security subscriptions, and payment method.
+\section*{Churn Drivers}
+
+\subsection*{Contract Type (The Strongest Lever)}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Contract} & \textbf{Churn Rate} \\
+\midrule
+Month-to-month & 42.71\% \\
+One year & 11.27\% \\
+Two year & 2.83\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Month-to-month customers churn at roughly \textbf{15$\times$} the rate of two-year customers. This is the single largest signal in the dataset. This 15× gap suggests contract length is the single highest-leverage retention lever available — a targeted campaign converting even 20\% of month-to-month customers to annual contracts could cut overall churn meaningfully more than any other intervention tested here.
+
+\subsection*{Internet Service Type}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Service} & \textbf{Churn Rate} \\
+\midrule
+Fiber optic & 41.89\% \\
+DSL & 18.96\% \\
+No internet & 7.40\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Fiber customers churn more than DSL customers despite paying for a premium product, meaning that this typically signals a price or service-quality issue. Telco should ask their churn customers for reason of churn whether it's price issue or a service-quality one, and discuss new price if the majority have chosen price issue or increase the quality of sevice to fit its price if this option available.
+
+\subsection*{Support and Security Addons}
+\begin{center}
+\begin{tabular}{lcc}
+\toprule
+ & \textbf{Churn Rate (No)} & \textbf{Churn Rate (Yes)} \\
+\midrule
+Tech Support & 41.64\% & 15.17\% \\
+Online Security & 41.77\% & 14.61\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Customers without these addons churn at roughly \textbf{2.8$\times$} the rate of those with them. These addons should provided to all customers to prevent this harsh loss.
+
+\subsection*{Payment Method}
+\begin{center}
+\begin{tabular}{lc}
+\toprule
+\textbf{Method} & \textbf{Churn Rate} \\
+\midrule
+Electronic check & 45.29\% \\
+Mailed check & 19.11\% \\
+Bank transfer (automatic) & 16.71\% \\
+Credit card (automatic) & 15.24\% \\
+\bottomrule
+\end{tabular}
+\end{center}
+Electronic check is the single riskiest cause, which is nearly \textbf{3$\times$} the churn rate of automatic payment methods. the churn should be lowerened by marketing for automatic payment methods or fixing the problems of onlune payment. The telco should get feedback of customers of problems of online payment and solve it quickly.
+\end{document}
